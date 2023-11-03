@@ -6,6 +6,6 @@ from django.db.models import Model
 
 
 class Thing(Model):
-    name = models.TextField(unique=True, blank=False, max_length=30)
-    description = models.TextField(unique=False, max_length=120)
-    quantity = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
+    name = models.TextField(default="", unique=True, blank=False, max_length=30)
+    description = models.TextField(default="", unique=False, max_length=120)
+    quantity = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100)])
